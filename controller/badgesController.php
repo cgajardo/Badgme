@@ -18,7 +18,7 @@ public function view(){
 	}
 	
 	//This is the URL you want to shorten
-	$longUrl = 'http://badgme.litmon.com/badge/view?d='.$id;
+	$longUrl = 'http://badgme.litmon.com/badges/view?d='.$id;
 	$apiKey = 'AIzaSyDMw9VeaKhBuArlcltbPHg819NbnURjy0w';
 	
 	/**********************/
@@ -43,6 +43,7 @@ public function view(){
 	$this->registry->template->title = $badge->title;
 	$this->registry->template->content = $badge->description;
 	$this->registry->template->url = $url;
+	$this->registry->template->id = $id;
 	$this->registry->template->show('view');
 }
 
@@ -57,7 +58,7 @@ public function save(){
 	$id = md5($id);
 	
 	//This is the URL you want to shorten
-	$longUrl = 'http://badgme.litmon.com/badge/view?d='.$id;
+	$longUrl = 'http://badgme.litmon.com/badges/view?d='.$id;
 	$apiKey = 'AIzaSyDMw9VeaKhBuArlcltbPHg819NbnURjy0w';
 	
 	/**********************/
@@ -82,6 +83,7 @@ public function save(){
 	$this->registry->template->title = $title;
 	$this->registry->template->content = $description;
 	$this->registry->template->url = $url; 
+	$this->registry->template->id = $id;
 	$this->registry->template->show('view');
 }
 
